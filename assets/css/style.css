@@ -1,0 +1,39 @@
+.jumbotron {
+    text-align: center;
+    background-color: rgb(184, 172, 196);
+    color: whitesmoke;
+    border-radius: 0;
+    border: 1px solid rgb(84, 84, 84);
+    padding: 0;
+}
+
+.navbar {
+    border: 2px solid white;
+    padding: -2rem;
+    margin-bottom: 1%;
+}
+
+.jumbotron p {
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+  
+.navbar-color {
+    background-color: rgb(184, 172, 196);
+}
+
+.nav-item-color {
+    color: whitesmoke;
+}
+
+.nav-item:active {
+    color: rgb(84, 84, 84);
+}
+
+.day {
+    text-align: end;
+    margin-right: 2%;
+    margin-top: 0.1%;
+    margin-bottom: 0.1%;
+}
+
