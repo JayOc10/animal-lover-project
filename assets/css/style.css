@@ -1,3 +1,12 @@
+:root {
+    --whitesmoke: whitesmoke;
+    --softblue: rgb(103, 144, 206);
+    --grey: rgb(82, 77, 77);
+    --peach: rgb(253, 241, 227);
+    --darkgrey: rgb(84, 84, 84);
+    --lightpurple: rgb(184, 172, 196);
+}
+
 .jumbotron {
     text-align: center;
     background-color: rgb(184, 172, 196);
@@ -57,6 +66,27 @@ p {
   font-size: 1.1rem;
   margin: 0 0 1rem;
   line-height: 1.5;
+}
+
+tbody {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+#repo-table:hover {
+  color:#1a1a1a;
+  text-decoration: underline;
+}
+
+.text-dark {
+  color: #1a1a1a;
+}
+
+
+h4 {
+  margin: 0 0 0.5rem;
+  line-height: 1.25;  
+  font-size: 2rem;
 }
 
 tbody {
