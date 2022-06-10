@@ -70,8 +70,9 @@ function getApi() {
 
 
 function getPetBreeds(token) {
-  console.log(token)
+  
   var requestUrl = `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals?breed=${breed}` ;
+  console.log(requestUrl);
   fetch(requestUrl, {
     headers: {"Authorization": `Bearer ${token}`}
   })
@@ -80,36 +81,41 @@ function getPetBreeds(token) {
     })
     .then(function (data) {
       console.log(data)
-      //Loop over the data to generate a table, each table row will have a link to the repo url
-      // for (var i = 0; i < data.length; i++) {
-      //   // Creating elements, tablerow, tabledata, and anchor
-      //   var createTableRow = document.createElement('tr');
-      //   var tableData = document.createElement('td');
-      //   var link = document.createElement('a');
-      //   // tableBody.addEventListener("click", randomFunc());
-
-      //   // Setting the text of link and the href of the link
-      //   link.textContent = data[i].name;
-
-      //   // Appending the link to the tabledata and then appending the tabledata to the tablerow
-      //   // The tablerow then gets appended to the tablebody
-      //   tableData.appendChild(link);
-      //   createTableRow.appendChild(tableData);
-      //   tableBody.appendChild(createTableRow);
-      // }
+      //modal population
+      //button to add to favorites
 });
 }
    //function calls
     updateCurrentDate();
     fetchButton.addEventListener('click', getApi);
     tableBody.addEventListener("click", getBreed);
+  
+    function getBreed(event) {
+        console.log(event.target);
+        var clickedBreed = event.target;
+        if (clickedBreed.matches(".breed-name")) {
+            breed = clickedBreed.textContent;
+            console.log(breed);
+        }
+        getKey();
+
+        
+    }
+
+    //function addToFavorites
+    //local storage
+    //add to favorites
+
+    //function to grab from local storage
+    //TODO:
+        //create modal
+        //create function to add to favorites and also
+        //set local storage
+        //create function to get local storage and display
+        //create new .js file to link to favorites.html
+        //JSON stingify and parse to store favs into array
 
 
+fetchButton.addEventListener('click', getApi);
 
-
-
-
-
-
-fetchButton.addEventListener('click', getKey);
 });
