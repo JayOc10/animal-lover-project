@@ -7,10 +7,6 @@
     --lightpurple: rgb(184, 172, 196);
 }
 
-body {
-    width: 100%;
-    margin: 0;
-}
 
 .jumbotron {
     text-align: center;
@@ -36,6 +32,10 @@ body {
     background-color: var(--lightpurple);
 }
 
+.navbar-color2 {
+    background-color: rgba(49, 81, 76, 0.657);
+}
+
 .nav-item-color {
     color: var(--whitesmoke);
 }
@@ -44,11 +44,52 @@ body {
     color: var(--darkgrey);
 }
 
+.btn-color {
+    background-color: rgb(49, 105, 105);
+    color: whitesmoke;
+}
+
 .day {
     text-align: end;
     margin-right: 2%;
     margin-top: 0.1%;
     margin-bottom: 0.1%;
+}
+
+
+tbody {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+#repo-table:hover {
+  color:#1a1a1a;
+  text-decoration: underline;
+}
+
+.text-dark {
+  color: #1a1a1a;
+}
+
+
+h4 {
+  margin: 0 0 0.5rem;
+  line-height: 1.25;  
+  font-size: 2rem;
+}
+
+tbody {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+#repo-table:hover {
+  color:#1a1a1a;
+  text-decoration: underline;
+}
+
+.text-dark {
+  color: #1a1a1a;
 }
 
 .aside-tips {
@@ -133,3 +174,4 @@ main {
     font-size: larger;
     border: 2px solid var(--darkgrey);
 }
+

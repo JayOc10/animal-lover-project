@@ -1,0 +1,80 @@
+.jumbotron {
+    text-align: center;
+    background-color: rgb(184, 172, 196);
+    color: whitesmoke;
+    border-radius: 0;
+    border: 1px solid rgb(84, 84, 84);
+    padding: 0;
+}
+
+.navbar {
+    border: 2px solid white;
+    padding: -2rem;
+    margin-bottom: 1%;
+}
+
+.jumbotron p {
+    color: whitesmoke;
+    font-size: 1.5rem;
+}
+  
+.navbar-color {
+    background-color: rgb(184, 172, 196);
+}
+
+.nav-item-color {
+    color: whitesmoke;
+}
+
+.nav-item:active {
+    color: rgb(84, 84, 84);
+}
+
+.day {
+    text-align: end;
+    margin-right: 2%;
+    margin-top: 0.1%;
+    margin-bottom: 0.1%;
+}
+
+
+body{  
+    font-family: Calibri, Helvetica, sans-serif;   
+} 
+
+.container {  
+    padding: 50px;  
+    background-color: rgb(255, 171, 101, 0.5);  
+}  
+
+input[type=text], input[type=password], textarea {
+    width: 20%;  
+    padding: 7px;  
+    margin: 2px 0 5px 6px;  
+    display: inline-block;  
+    border: none;  
+    background: #f1f1f1;  
+}  
+
+input[type=text]:focus, input[type=password]:focus {   
+    outline: 2%;  
+}  
+
+  
+hr {  
+    border: 1px solid #f1f1f1;  
+    margin-bottom: 25px;  
+}  
+.registerbtn {  
+    background-color: #71acb3;  
+    color: white;  
+    padding: 16px 20px;  
+    margin: 8px 0;  
+    border: none;  
+    cursor: pointer;  
+    width: 100%;  
+    opacity: 0.9;  
+}  
+.registerbtn:hover {  
+    opacity: 1;  
+}  
