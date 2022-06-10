@@ -22,12 +22,21 @@
     background-color: rgb(184, 172, 196);
 }
 
+.navbar-color2 {
+    background-color: rgba(49, 81, 76, 0.657);
+}
+
 .nav-item-color {
     color: whitesmoke;
 }
 
 .nav-item:active {
     color: rgb(84, 84, 84);
+}
+
+.btn-color {
+    background-color: rgb(49, 105, 105);
+    color: whitesmoke;
 }
 
 .day {
@@ -37,3 +46,29 @@
     margin-bottom: 0.1%;
 }
 
+
+h2 {
+  margin: 0 0 0.5rem;
+  line-height: 1.25;  
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+tbody {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+#repo-table:hover {
+  color:#1a1a1a;
+  text-decoration: underline;
+}
+
+.text-dark {
+  color: #1a1a1a;
+}
