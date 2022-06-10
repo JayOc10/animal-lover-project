@@ -1,7 +1,21 @@
+:root {
+    --whitesmoke: whitesmoke;
+    --softblue: rgb(103, 144, 206);
+    --grey: rgb(82, 77, 77);
+    --peach: rgb(253, 241, 227);
+    --darkgrey: rgb(84, 84, 84);
+    --lightpurple: rgb(184, 172, 196);
+}
+
+body {
+    width: 100%;
+    margin: 0;
+}
+
 .jumbotron {
     text-align: center;
-    background-color: rgb(184, 172, 196);
-    color: whitesmoke;
+    background-color: var(--lightpurple);
+    color: var(--whitesmoke);
     border-radius: 0;
     border: 1px solid rgb(84, 84, 84);
     padding: 0;
@@ -14,20 +28,20 @@
 }
 
 .jumbotron p {
-    color: whitesmoke;
+    color: var(--whitesmoke);
     font-size: 1.5rem;
 }
   
 .navbar-color {
-    background-color: rgb(184, 172, 196);
+    background-color: var(--lightpurple);
 }
 
 .nav-item-color {
-    color: whitesmoke;
+    color: var(--whitesmoke);
 }
 
 .nav-item:active {
-    color: rgb(84, 84, 84);
+    color: var(--darkgrey);
 }
 
 .day {
@@ -39,22 +53,83 @@
 
 .aside-tips {
     font-family: Tahoma, sans-serif;
-    width: 30%;
-    background-color: rgb(253, 241, 227);
-    color: rgb(82, 77, 77);
-    border-right: 2px solid rgb(82, 77, 77) ;
+    max-width: 30%;
+    background-color: var(--peach);
+    color: var(--grey);
+    border-right: 2px solid var(--grey) ;
     border-radius: 3px;
     padding-left: 8px;
-    padding-right: 10px;
+    padding-right: 15px;
+    flex: 1 0 30%;
 }
 
 h2 {
-    padding-bottom: 40px;
+    padding-bottom: 70px;
 }
+
 h3 {
-    border-bottom: 2px dotted rgb(82, 77, 77) ;
-    padding-bottom: 5px;
+    border-bottom: 2px dotted var(--softblue) ;
+    padding-bottom: 30px;
+    color: var(--softblue);
 }
+
 p {
+    padding-bottom: 30px;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+.container {
+    width: 70%;
+    flex: 6 0 70%;
+    flex-wrap: wrap;
+    display: flex;
+}  
+
+.pets {
+    width: 100%;
+    border-radius: 4px;
     padding-bottom: 20px;
+}
+.main-p {
+    background-color: rgb(248, 246, 246);
+    border-radius: 4px;
+    padding: 15px;
+    font-family:'Times New Roman', Times, serif;
+    font-size:x-large;
+    color: var(--darkgrey);
+}
+.adopt-me {
+    border-radius: 4px;
+    padding-top: 10px;
+    width: 55%;
+}
+
+.side-msg {
+    background-color: var(--peach) ;
+    border-radius: 4px;
+    font-size: xx-large;
+    padding: 10px;
+    width: 25%;
+    text-align: center;
+    margin: 85px;
+}
+
+.last-p {
+    color: var(--darkgrey);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    font-size: xx-large;
+    text-align: center;
+    padding: 15px;
+}
+
+#footer {
+    background-color: var(--lightpurple);
+    color: var(--whitesmoke);
+    text-align: center;
+    padding: 20px;
+    font-size: larger;
+    border: 2px solid var(--darkgrey);
 }
