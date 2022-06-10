@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+    />
+    <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+    rel="stylesheet"
+    />
     <link rel = "stylesheet" href = ./assets/css/style.css>
     <title>Adoption Search</title>
 </head>
@@ -17,7 +27,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link text-light" href="#">Home </a>
+              <a class="nav-link text-light" href="index.html">Home </a>
             </li>
             <li class="nav-item active">
               <a class="nav-link text-light" href="#">Adoption Search <span class="sr-only">(current)</span></a>
@@ -31,21 +41,23 @@
 </header>
 
 <body>
-  <main class="flex-row justify-center align-center col-auto p-4 bg-light">
-    <section class="card card-rounded col-7 bg-white">
+  <main class="flex-row justify-left align-center col-auto p-2 navbar-item-color">
+    <section class="card card-rounded col-7 navbar-color2">
       <header class="card-header text-center">
-        <h2 class="text-white">
-          Fetch Demo
-        </h2>
+        <h4 class="text-light">
+          Search 
+        </h4>
       </header>
       <div class="text-center pt-4">
-        <button class="btn btn-danger" id="fetch-button">
+        <button class="btn btn-color" id="fetch-button">
           Click Me
         </button>
       </div>
-      <table class="card-body table mx-auto my-4">
+      <table class="card-body table mx-auto my-4 text-center">
         <th>
-          <p class="my-4">Results</p>
+          <h4 class="my-4 card-header text-center">
+            Results
+          </h4>
         </th>
         <tbody id="repo-table" class="mx-auto text-center"></tbody>
       </table>

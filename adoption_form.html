@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel = "stylesheet" href = ./assets/css/style.css>
+    <link rel = "stylesheet" href = ./assets/css/form.css>
     <title>Adoption Form</title>
 </head>
 <p class = "day" id="currentDate"></p>
@@ -31,6 +31,69 @@
 </header>
 
 <body>
+    <form>  
+        <div class="container">  
+        <h1> Adoption Form Generator</h1> 
+        <hr>  
+        <label> Applicant's First Name: </label>   
+      <input type="text" name="firstName" placeholder= "Jane" size="15" required />   
+      <label> Applicant's Last Name: </label>   
+      <input type="text" name="lastName" placeholder= "Doe" size="15" required />   
+      <br>
+      <label> Address: </label>   
+      <input type="text" name="address" placeholder="123 Crayon Lane Apt1" size="15" required />   
+      <label> City: </label>    
+      <input type="text" name="city" placeholder="Colorville" size="15"required />  
+      <label> State: </label>    
+      <input type="text" name="state" placeholder="ie. CA" size="15"required />   
+      <br>
+      <label> Zip Code: </label>    
+      <input type="text" name="zip" placeholder="00000" size="10"required />     
+      <div>  
+      <label>   
+      Type of Housing :  
+      </label>   
+        
+      <select>  
+      <option value="Other">Other</option>  
+      <option value="Apt">Apartment</option>  
+      <option value="Condo">Condo</option>  
+      <option value="House">House</option>  
+      
+      </select>  
+      </div>  
+      <div>  
+      <label>   
+      Are you Planning on moving in the next 12 months?:  
+      </label><br>  
+      <input type="radio" value="Yes" name="choice1"> Yes   
+      <input type="radio" value="No" name="choice2"> No
+      <br>
+      <label>   
+        Why do you want this pet? :  
+      </label>             
+        <input type="checkbox" value="companion" name="choice"> Companion  
+        <input type="checkbox" value="security" name="choice"> Security   
+        <input type="checkbox" value="housePet" name="choice"> House pet
+        <input type="checkbox" value="workingDog" name="choice"> Working dog
+        <input type="checkbox" value="breeding" name="choice"> Breeding
+        <input type="checkbox" value="other" name="choice"> Other
+        <br>
+        <label> If other, please explain: </label>    
+        <input type="text" name="otherText" size="10" />    
+        <br>
+        <label>   
+          Have you previously owned pets?:  
+        </label><br>  
+        <input type="radio" value="Yes" name="choice1"> Yes   
+        <input type="radio" value="No" name="choice2"> No
+        <br>
+        <label> If so, how many?: </label>    
+        <input type="text" name="otherText" size="10" />    
+        <br>
+          <button type="submit" class="registerbtn">Register</button> 
+      </div>      
+    </form>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
