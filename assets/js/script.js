@@ -43,12 +43,70 @@ function getApi() {
         createTableRow.appendChild(tableData);
         tableBody.appendChild(createTableRow);
       }
-  });
+    });
+    }
+      function getKey() {
+        // fetch request gets a list of all the repos for the node.js organization
+        
+        var token = ''
+      
+      fetch('https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/oauth2/token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }, 
+        body:JSON.stringify({
+          "grant_type":"client_credentials","client_id":"qIVT27e1bB7qYrnovBGDoJdA5D2LFOfd2qpQEFc0Kq15i40qFt","client_secret":"mcP2VgYf89I6msMlkmkjdEadDwJAWbwjpvfjH4OC"
+      })
+      })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data)
+        token = data.access_token
+        getPetBreeds(token)
+      })
+    }
 
-  function showDiv() {
-    document.getElementById('welcomeDiv').style.display = "block";
- }
+
+function getPetBreeds(token) {
+  console.log(token)
+  var requestUrl = `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals?breed=${breed}` ;
+  fetch(requestUrl, {
+    headers: {"Authorization": `Bearer ${token}`}
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data)
+      //Loop over the data to generate a table, each table row will have a link to the repo url
+      // for (var i = 0; i < data.length; i++) {
+      //   // Creating elements, tablerow, tabledata, and anchor
+      //   var createTableRow = document.createElement('tr');
+      //   var tableData = document.createElement('td');
+      //   var link = document.createElement('a');
+      //   // tableBody.addEventListener("click", randomFunc());
+
+      //   // Setting the text of link and the href of the link
+      //   link.textContent = data[i].name;
+
+      //   // Appending the link to the tabledata and then appending the tabledata to the tablerow
+      //   // The tablerow then gets appended to the tablebody
+      //   tableData.appendChild(link);
+      //   createTableRow.appendChild(tableData);
+      //   tableBody.appendChild(createTableRow);
+      // }
+});
 }
 
-fetchButton.addEventListener('click', getApi);
+
+
+
+
+
+
+
+fetchButton.addEventListener('click', getKey);
 });
