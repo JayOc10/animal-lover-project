@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var currentDate = $("#currentDate");
-    const fName = JSON.parse(localStorage.getItem('firstName')) || [];
+    var breed = "";
 
     //This function updates the current date to 
     //display at the top of the page
@@ -8,15 +8,14 @@ $(document).ready(function() {
         currentDate.text(moment().format("dddd, MMMM Do YYYY"));
     }
     
-    //function calls
-    updateCurrentDate();
+ 
     // form.js
     var tableBody = document.getElementById('repo-table');
     var fetchButton = document.getElementById('fetch-button');
     
 function getApi() {
   // fetch request gets a list of all the repos for the node.js organization
-  var requestUrl = 'https://api.thedogapi.com/v1/breeds?limit=10&page=0';
+  var requestUrl = 'https://api.thedogapi.com/v1/breeds?limit=20&page=0';
 
   fetch(requestUrl, {
     headers: {authentication: "x-api-key ea90132b-c88d-4529-afad-51de89d38cb9"}
@@ -31,15 +30,15 @@ function getApi() {
         // Creating elements, tablerow, tabledata, and anchor
         var createTableRow = document.createElement('tr');
         var tableData = document.createElement('td');
-        var link = document.createElement('a');
-        // tableBody.addEventListener("click", randomFunc());
+        tableData.className = "breed-name";
+        
 
         // Setting the text of link and the href of the link
-        link.textContent = data[i].name;
+        tableData.textContent = data[i].name;
 
         // Appending the link to the tabledata and then appending the tabledata to the tablerow
         // The tablerow then gets appended to the tablebody
-        tableData.appendChild(link);
+        // tableData.appendChild(link);
         createTableRow.appendChild(tableData);
         tableBody.appendChild(createTableRow);
       }
@@ -71,8 +70,9 @@ function getApi() {
 
 
 function getPetBreeds(token) {
-  console.log(token)
+  
   var requestUrl = `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals?breed=${breed}` ;
+  console.log(requestUrl);
   fetch(requestUrl, {
     headers: {"Authorization": `Bearer ${token}`}
   })
@@ -81,32 +81,41 @@ function getPetBreeds(token) {
     })
     .then(function (data) {
       console.log(data)
-      //Loop over the data to generate a table, each table row will have a link to the repo url
-      // for (var i = 0; i < data.length; i++) {
-      //   // Creating elements, tablerow, tabledata, and anchor
-      //   var createTableRow = document.createElement('tr');
-      //   var tableData = document.createElement('td');
-      //   var link = document.createElement('a');
-      //   // tableBody.addEventListener("click", randomFunc());
-
-      //   // Setting the text of link and the href of the link
-      //   link.textContent = data[i].name;
-
-      //   // Appending the link to the tabledata and then appending the tabledata to the tablerow
-      //   // The tablerow then gets appended to the tablebody
-      //   tableData.appendChild(link);
-      //   createTableRow.appendChild(tableData);
-      //   tableBody.appendChild(createTableRow);
-      // }
+      //modal population
+      //button to add to favorites
 });
 }
+   //function calls
+    updateCurrentDate();
+    fetchButton.addEventListener('click', getApi);
+    tableBody.addEventListener("click", getBreed);
+  
+    function getBreed(event) {
+        console.log(event.target);
+        var clickedBreed = event.target;
+        if (clickedBreed.matches(".breed-name")) {
+            breed = clickedBreed.textContent;
+            console.log(breed);
+        }
+        getKey();
+
+        
+    }
+
+    //function addToFavorites
+    //local storage
+    //add to favorites
+
+    //function to grab from local storage
+    //TODO:
+        //create modal
+        //create function to add to favorites and also
+        //set local storage
+        //create function to get local storage and display
+        //create new .js file to link to favorites.html
+        //JSON stingify and parse to store favs into array
 
 
+fetchButton.addEventListener('click', getApi);
 
-
-
-
-
-
-fetchButton.addEventListener('click', getKey);
 });

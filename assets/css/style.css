@@ -172,6 +172,16 @@ main {
     padding: 15px;
 }
 
+.container2 {
+    margin: 2%;
+    padding: 3%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--peach);
+} 
+
 /* footer */ 
 
 #footer {
