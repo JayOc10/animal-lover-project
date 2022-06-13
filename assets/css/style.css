@@ -15,7 +15,7 @@
     background-color: var(--lightpurple);
     color: var(--whitesmoke);
     border-radius: 0;
-    border: 1px solid rgb(84, 84, 84);
+    border: 1px solid var(--darkgrey);
     padding: 0;
 }
 
@@ -48,7 +48,7 @@
 
 .btn-color {
     background-color: rgb(49, 105, 105);
-    color: whitesmoke;
+    color: var(--whitesmoke);
 }
 
 .day {
@@ -60,7 +60,7 @@
 
 
 tbody {
-  color: whitesmoke;
+  color: var(--whitesmoke);
   text-decoration: none;
 }
 
@@ -81,7 +81,7 @@ h4 {
 }
 
 tbody {
-  color: whitesmoke;
+  color: var(--whitesmoke);
   text-decoration: none;
 }
 
@@ -172,6 +172,8 @@ main {
     padding: 15px;
 }
 
+/* favorite page */
+
 .container2 {
     margin: 2%;
     padding: 3%;
@@ -180,7 +182,17 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     background-color: var(--peach);
-} 
+}
+
+.container2 img{
+    width: 50%;
+    min-height: 100px;
+    margin: 0 auto;
+}
+
+.list-group {
+    width: 600px;
+}
 
 /* footer */ 
 
