@@ -64,7 +64,7 @@ tbody {
   text-decoration: none;
 }
 
-#repo-table:hover {
+td:hover {
   color:#1a1a1a;
   text-decoration: underline;
 }
@@ -85,10 +85,10 @@ tbody {
   text-decoration: none;
 }
 
-#repo-table:hover {
+/* td:hover {
   color:#1a1a1a;
   text-decoration: underline;
-}
+} */
 
 .text-dark {
   color: #1a1a1a;
