@@ -209,6 +209,30 @@ h5 {
     color: var(--darkgrey);
 }
 
+.petPhoto {
+    float: right;
+}
+
+.modal-body p {
+    color:rgb(49, 105, 105);
+    font-weight:lighter;
+    padding: 2px;
+}
+
+h6 {
+    margin: 0px;
+    width: 50%;
+    text-align: left;
+    font-size: xx-large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--darkgrey)
+}
+
+.petName{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
 /* footer */ 
 
 #footer {

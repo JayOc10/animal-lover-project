@@ -64,16 +64,39 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h6 class="modal-title" id="exampleModalLongTitle">Dog Name</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
+                <p id = "error"></p>
               </div>
               <div class="modal-body">
-                ...
+                <div class = "petName">
+                  Name: <p id = "name"></p>
+                </div>
+                <div class = "petPhoto">
+                  <img src = "" alt = "" id = "photo"></img>
+                </div>
+                <div class = "petBreed">
+                 Breed:
+                  <div class = "pBreed">
+                      Primary Breed:<p id = "primary"></p>
+                  </div>
+                  <div class = "sBreed">
+                      Secondary Breed:<p id = "secondary"></p>
+                  </div>
+                </div>
+                <div class = "petStatus">
+                  Status:<p id = "status"></p>
+                </div>
+                <div class = "petAge">
+                  Age:<p id = "age"></p>
+                </div>
+                <div class = "petSize">
+                  Size:<p id = "size"></p>
+                </div>
               </div>
               <div class="modal-footer">
-      
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary fas fa-inverse fa-solid fa-heart" id = "savedFavorites" data-fa-transform="shrink-10 up-2"> Save to Favorites</button>
               </div>
