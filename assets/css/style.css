@@ -5,6 +5,7 @@
     --peach: rgb(253, 241, 227);
     --darkgrey: rgb(84, 84, 84);
     --lightpurple: rgb(184, 172, 196);
+    --teal: rgb(49, 105, 105);
 }
 
 
@@ -209,14 +210,34 @@ h5 {
     color: var(--darkgrey);
 }
 
-.petPhoto {
-    float: right;
+.modal-body {
+    background-color: var(--whitesmoke);
 }
 
 .modal-body p {
     color:rgb(49, 105, 105);
     font-weight:lighter;
     padding: 2px;
+}
+
+.petPhoto {
+    float: right;
+    border: solid 5px;
+    border-radius: 3%;
+    border-color: var(--teal);
+}
+
+.petAttribute p {
+    color: var(--teal);
+    font-weight:normal;
+    padding: 2px;
+    font-size:medium;
+    float: center;
+}
+
+.pBreed {
+    float:right;
+    padding: 4%;
 }
 
 h6 {
@@ -231,6 +252,18 @@ h6 {
 .petName{
     font-size: 1rem;
     font-weight: bold;
+}
+
+.petAttribute{
+    font-size: 18px;
+    font-weight:normal;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#error.relative {
+    color:red;
+    left: 30px;
+
 }
 
 /* footer */ 
