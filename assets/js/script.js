@@ -9,10 +9,8 @@ $(document).ready(function () {
     }
 
 
-    // form.js
     var tableBody = document.getElementById('repo-table');
     var fetchButton = document.getElementById('fetch-button');
-    var modalTitle = document.getElementById('modal-title');
     var modelFavBtn = document.getElementById("savedFavorites");
 
     function getApi() {
@@ -48,6 +46,7 @@ $(document).ready(function () {
 
             });
     }
+
     function getKey() {
         // fetch request gets a list of all the repos for the node.js organization
 
@@ -85,21 +84,19 @@ $(document).ready(function () {
             })
             .then(function (data) {
                 console.log(data)
-                //modal population
-                //button to add to favorites
             });
     }
     //function calls
     updateCurrentDate();
-    fetchButton.addEventListener('click', getApi);
+    // fetchButton.addEventListener('click', getApi);
     
     function getBreed(event) {
         console.log(event.target);
         var clickedBreed = event.target;
         document.getElementsByClassName("modal-title")[0].textContent = clickedBreed.textContent;
         document.getElementById("savedFavorites").setAttribute("animal", clickedBreed.innerText);
-        //getKey();
-
+        document.getElementsByClassName("modal-body")
+        getKey();
 
     }
    
