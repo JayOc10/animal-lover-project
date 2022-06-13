@@ -181,17 +181,32 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: var(--peach);
+    background-color: rgb(216, 233, 240);
 }
 
-.container2 img{
+h5 {
+    margin: 0px;
     width: 50%;
-    min-height: 100px;
-    margin: 0 auto;
+    text-align: center;
+    font-size: xxx-large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--darkgrey)
+}
+
+.container2 img {
+    display: block;
+    left: auto;
+    right: auto;
+    width: 55%;
+    margin: 50px;
+    border-radius: 6px;
+    border: 3px solid var(--lightpurple);
 }
 
 .list-group {
-    width: 600px;
+    width: 700px; 
+    font-size: large;
+    color: var(--darkgrey);
 }
 
 /* footer */ 
