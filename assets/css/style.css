@@ -261,7 +261,6 @@ h6 {
 }
 
 #error {
-    display: flex;
     color:red;
     text-align: start; 
 
