@@ -1,13 +1,4 @@
-var currentDate = $("#currentDate");
-var breed = "";
-
-//This function updates the current date to 
-//display at the top of the page
-function updateCurrentDate() {
-    currentDate.text(moment().format("dddd, MMMM Do YYYY"));
-}
-
-
+//initial created variables 
 var tableBody = document.getElementById('repo-table');
 var fetchButton = document.getElementById('fetch-button');
 var modelFavBtn = document.getElementById("savedFavorites");
@@ -18,9 +9,17 @@ var dog2 = document.getElementById("dog2");
 var dog3 = document.getElementById("dog3");
 var dog4 = document.getElementById("dog4");
 var dog5 = document.getElementById("dog5");
+var currentDate = $("#currentDate");
+var breed = "";
 
-
-
+//This function updates the current date to 
+//display at the top of each page
+function updateCurrentDate() {
+    currentDate.text(moment().format("dddd, MMMM Do YYYY"));
+}
+//This function requests an api from the 1st API.
+//you see this function deployed when the breed search is active
+//this API uses a fetch request
 function getApi() {
     // fetch request gets a list of all the repos for the node.js organization
     var requestUrl = 'https://api.thedogapi.com/v1/breeds?limit=20&page=0';
@@ -54,12 +53,11 @@ function getApi() {
 
         });
 }
-
+//This function requests a token for the second API
+//Once again it uses a fetch request
 function getKey() {
     // fetch request gets a list of all the repos for the node.js organization
-
     var token = ''
-
     fetch('https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/oauth2/token', {
         method: 'POST',
         headers: {
@@ -80,7 +78,9 @@ function getKey() {
         })
 }
 
-
+//This function is a helper function to getKey()
+//This function uses a fetch request as well as a Bearer token to 
+//send a request to the API in order to get the available dogs up for adoption
 function getPetBreeds(token) {
     var requestUrl = `https://cors-anywhere.herokuapp.com/https://api.petfinder.com/v2/animals?breed=${breed}`;
     console.log(requestUrl);
@@ -94,28 +94,31 @@ function getPetBreeds(token) {
             console.log(data);
             errorSpan.textContent = "";
             modelFavBtn.removeAttribute("disabled");
-            if (data.animals === undefined) {           
+            if (data.animals === undefined) {
                 console.log(errorSpan);
                 modelFavBtn.setAttribute("disabled", "");
                 errorSpan.textContent = "Breed not Found. Select different breed.";
-                
+
             } else {
                 displayPetInfo(data);
-            }           
+            }
         });
 }
-//function calls
+//function call to update current day
 updateCurrentDate();
 
+//This function's purpose is to get the pet breed that 
+//the user has clicked on. It also calls on the getKey() function
 function getBreed(event) {
-    // console.log(event.target);
     var clickedBreed = event.target;
     var breedName = clickedBreed.textContent;
     breed = breedName;
     getKey();
-
 }
 
+//This function's purpose is to display the available dog's info for adoption 
+//it randomizes the dogs so that the user always gets a different dog when clicked again
+//this function also has some error handling 
 function displayPetInfo(petBreeds) {
     var randomAnimal;
     console.log(petBreeds.animals);
@@ -136,25 +139,27 @@ function displayPetInfo(petBreeds) {
         document.getElementById("secondary").textContent = "none";
     } else {
         document.getElementById("secondary").textContent = randomAnimal.breeds.secondary;
-    } 
+    }
     document.getElementById("status").textContent = randomAnimal.status;
     document.getElementById("age").textContent = randomAnimal.age;
     document.getElementById("size").textContent = randomAnimal.size;
 }
 
+//This function alows the user to save their favorite dogs
+//into local storage by using .JSON parse and stringify
 const favorites = (event) => {
     var dogs = localStorage.getItem("dogs");
     dogsArray = JSON.parse(dogs || "[]");
     dogsArray.push(event.target.getAttribute("animal"));
     localStorage.setItem("dogs", JSON.stringify(dogsArray));
-    console.log(dogsArray);
 }
 
+//This function allows the dogs to be displayed onto the favorites
+//list on the favorites page by grabbing from local storage and setting 
+//the textContent to the page
 const favoriteList = () => {
     var saveFav = localStorage.getItem("dogs")
-    console.log(saveFav);
     dogsArray = JSON.parse(saveFav || "[]");
-    console.log(dogsArray);    
     dog1.textContent = dogsArray[0];
     dog2.textContent = dogsArray[1];
     dog3.textContent = dogsArray[2];
@@ -162,21 +167,14 @@ const favoriteList = () => {
     dog5.textContent = dogsArray[4];
 
 }
-// window.onload = function() {
-//     favoriteList();
-//   };
-
 
 modelFavBtn.addEventListener("click", favorites);
 
+//----notes----
 //JSON.stringify turns anything in js into a string
 //JSON.parse turns any string into js
 
-
-//TODO:
-//need to display dog info better on modal from 2nd API
-//create function to get local storage and display
-
+//bootstrap modal
 $('#myModal').on('shown.bs.modal', function () {
     $('#myInput').trigger('focus')
 })

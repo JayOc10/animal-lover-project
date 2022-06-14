@@ -1,4 +1,4 @@
-
+//intialized variables
 var dogsArray = [];
 var dog1 = document.getElementById("dog1");
 var dog2 = document.getElementById("dog2");
@@ -8,8 +8,9 @@ var dog5 = document.getElementById("dog5");
 
 
 
-
-
+//This function allows the dogs to be displayed onto the favorites
+//list on the favorites page by grabbing from local storage and setting 
+//the textContent to the page
 const favoriteList = (event) => {
     var saveFav = localStorage.getItem("dogs")
     console.log(saveFav);
@@ -28,7 +29,5 @@ const favoriteList = (event) => {
     dog5.textContent = dogsArray[4];
 
 }
-// window.onload = function() {
-//     favoriteList();
-//   };
-  favoriteList()
+//function call
+favoriteList()
