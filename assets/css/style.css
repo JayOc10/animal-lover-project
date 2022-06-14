@@ -260,9 +260,10 @@ h6 {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#error.relative {
+#error {
+    display: flex;
     color:red;
-    left: 30px;
+    text-align: start; 
 
 }
 
