@@ -262,7 +262,7 @@ h6 {
 
 #error {
     color:red;
-    left: 30px;
+    text-align: start; 
 
 }
 
