@@ -3,6 +3,7 @@ var tableBody = document.getElementById('repo-table');
 var fetchButton = document.getElementById('fetch-button');
 var modelFavBtn = document.getElementById("savedFavorites");
 var errorSpan = document.getElementById("error");
+var currentDate = $("#currentDate");
 var dogsArray = [];
 
 //This function updates the current date to 

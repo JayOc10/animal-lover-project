@@ -29,6 +29,11 @@ You and your group will use everything you've learned over the past six modules 
 
 * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application)
 
+## Photos
+
+![](favorite page.jpg)
+![](first page.jpg)
+![](search page.jpg)
 
 ## Links
 
